@@ -36,20 +36,20 @@
                 </div>
                 <div class="mb-5">
                     <h6>Storage</h6>
-                    <button>256 GB SSD Storage </button>
-                    <button>512 GB SSD Storage </button>
-                    <button>1 TB SSD Storage </button>
+                    <button id="storage-256gb">256 GB SSD Storage </button>
+                    <button id="storage-512gb">512 GB SSD Storage </button>
+                    <button id="storage-1tb">1 TB SSD Storage </button>
 
                 </div>
                 <div class="mb-5">
                     <h6>Choose Your Delivery Option</h6>
-                    <button>Friday,14th August Free Prime Delivery</button>
-                    <button>Tuesday,10th August Delivery Charge $20</button>
+                    <button id="free">Friday,14th August Free Prime Delivery</button>
+                    <button id="delivery-cost">Tuesday,10th August Delivery Charge $20</button>
                 </div>
                 <table class="table fw-bolder">
                     <tr>
                         <td>Best Price</td>
-                        <td>$1299</td>
+                        <td>$ <span id="bestPrice">1299</span> </td>
                     </tr>
                     <tr>
                         <td>Extra Memory Cost</td>
@@ -57,11 +57,11 @@
                     </tr>
                     <tr>
                         <td>Extra Shortage Cost</td>
-                        <td>$0</td>
+                        <td>$ <span id="storage-cost">0</span> </td>
                     </tr>
                     <tr>
                         <td>Delivery Charge</td>
-                        <td>$0</td>
+                        <td>$ <span id="del-charge">0</span> </td>
                     </tr>
                     <tr>
                         <td>
@@ -70,7 +70,7 @@
                     </tr>
                     <tr>
                         <td>Total Price</td>
-                        <td>$1299</td>
+                        <td>$ <span id="total-price">1299</span> </td>
                     </tr>
                 </table>
                 <span>Promo Code</span><br>
