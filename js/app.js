@@ -10,6 +10,7 @@ function getMemoryBtn(isfree) {
         newMemoryTotal = 100;
     }
     memoryCost.innerText = newMemoryTotal;
+    return newMemoryTotal;
 }
 function storageBtn(btnName) {
     const storageCost = document.getElementById('storage-cost');
@@ -26,6 +27,7 @@ function storageBtn(btnName) {
         newStorageTotal = 500;
     }
     storageCost.innerText = newStorageTotal;
+    return newStorageTotal;
 
 }
 function deliveryUpdate(isfree) {
@@ -38,33 +40,58 @@ function deliveryUpdate(isfree) {
         delCostValue = 20;
     }
     deliveryCost.innerText = delCostValue;
+    return delCostValue;
+}
+// function getElementById(elementId){
+//     const elementValu = document.getElementById(elementId);
+//     const value = parseFloat(elementValu.innerText);
+
+// }
+function totalCost() {
+    const totalCost = document.getElementById('total-price');
+    const totalCostValue = parseFloat(totalCost.innerText);
+    const memoryStr = document.getElementById('memory-cost');
+    const memory = parseFloat(memoryStr.innerText);
+    const storageStr = document.getElementById('storage-cost');
+    const storage = parseFloat(storageStr.innerText);
+    const deliveryStr = document.getElementById('del-charge');
+    const delivery = parseFloat(deliveryStr.innerText);
+    const updateTotal = 1299 + memory + storage + delivery;
+    totalCost.innerText = updateTotal;
 }
 //8gb memory set
 document.getElementById('8gb-memory-btn').addEventListener('click', function () {
     getMemoryBtn(true);
+    totalCost();
 });
 //16gb Memory set
 document.getElementById('16gb-memory-btn').addEventListener('click', function () {
     getMemoryBtn(false);
+    totalCost();
 });
 //256 gb storage
 document.getElementById('storage-256gb').addEventListener('click', function () {
     storageBtn('storage-256gb');
-})
+    totalCost();
+});
 //512 gb storage
 document.getElementById('storage-512gb').addEventListener('click', function () {
     storageBtn('storage-512gb');
+    totalCost();
 });
 //1tb storage
 document.getElementById('storage-1tb').addEventListener('click', function () {
     storageBtn('storage-1tb');
+    totalCost();
 });
 //delivery
 document.getElementById('free').addEventListener('click', function () {
     deliveryUpdate(true);
+    totalCost();
 });
 document.getElementById('delivery-cost').addEventListener('click', function () {
     deliveryUpdate(false);
+    totalCost();
 });
 
 
