@@ -42,21 +42,20 @@ function deliveryUpdate(isfree) {
     deliveryCost.innerText = delCostValue;
     return delCostValue;
 }
-// function getElementById(elementId){
-//     const elementValu = document.getElementById(elementId);
-//     const value = parseFloat(elementValu.innerText);
+function getElementById(elementId) {
+    const elementValue = document.getElementById(elementId);
+    const value = parseFloat(elementValue.innerText);
+    elementValue.innerText = value;
+    return value;
 
-// }
+}
 function totalCost() {
     const totalCost = document.getElementById('total-price');
-    const totalCostValue = parseFloat(totalCost.innerText);
-    const memoryStr = document.getElementById('memory-cost');
-    const memory = parseFloat(memoryStr.innerText);
-    const storageStr = document.getElementById('storage-cost');
-    const storage = parseFloat(storageStr.innerText);
-    const deliveryStr = document.getElementById('del-charge');
-    const delivery = parseFloat(deliveryStr.innerText);
-    const updateTotal = 1299 + memory + storage + delivery;
+    const totalCostValue = 1299;
+    const memory = getElementById('memory-cost');
+    const storage = getElementById('storage-cost');
+    const delivery = getElementById('del-charge');
+    const updateTotal = totalCostValue + memory + storage + delivery;
     totalCost.innerText = updateTotal;
 }
 //8gb memory set
