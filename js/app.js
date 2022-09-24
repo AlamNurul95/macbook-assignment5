@@ -2,7 +2,6 @@ function getMemoryBtn(isfree) {
     const memoryCost = document.getElementById('memory-cost');
     const PreviousMemoryTotal = parseFloat(memoryCost.innerText);
     let newMemoryTotal;
-
     if (isfree == true) {
         newMemoryTotal = 0;
     }
@@ -28,7 +27,6 @@ function storageBtn(btnName) {
     }
     storageCost.innerText = newStorageTotal;
     return newStorageTotal;
-
 }
 function deliveryUpdate(isfree) {
     const deliveryCost = document.getElementById('del-charge');
@@ -91,6 +89,24 @@ document.getElementById('free').addEventListener('click', function () {
 document.getElementById('delivery-cost').addEventListener('click', function () {
     deliveryUpdate(false);
     totalCost();
+});
+
+//promo Code 
+document.getElementById('apply-btn').addEventListener('click', function () {
+    const getInput = document.getElementById('text-value');
+    const inputValue = getInput.value;
+    getInput.value = '';
+    const discountTotal = document.getElementById('discount-value');
+    const discountTotalValue = parseFloat(discountTotal.innerText);
+    let updateDiscountTotal;
+
+    if (inputValue == 'stevekaku') {
+        updateDiscountTotal = discountTotalValue * 0.2;
+    }
+    else {
+        updateDiscountTotal = discountTotalValue;
+    }
+    discountTotal.innerText = updateDiscountTotal;
 });
 
 
